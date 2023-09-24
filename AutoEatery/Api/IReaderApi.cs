@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace AutoEatery.Controllers;
+namespace AutoEatery.Api;
 
 public interface IReaderApi
 {
@@ -8,4 +8,8 @@ public interface IReaderApi
     IActionResult ReadDishes(int index = 0, int count = 25);
     IActionResult ReadSuppliers(int index = 0, int count = 25);
     IActionResult ReadIngredients(int index = 0, int count = 25);
+    IActionResult GetSuppliers(int id);
+    IActionResult GetOrders(int id);
+    IActionResult GetIngredients(int id);
+    IActionResult GetDishes(int id);
 }

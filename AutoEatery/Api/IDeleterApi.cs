@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace AutoEatery.Controllers;
+namespace AutoEatery.Api;
 
 public interface IDeleterApi
 {

@@ -56,6 +56,17 @@ public static class HAL
         return result;
     }
 
+    public static dynamic ToResource(this object o, string apiPath, int id)
+    {
+        var resource = o.ToDynamic();
+        resource._links = new {
+            self = new {
+                href = $"{apiPath}/{id}"
+            }
+        };
+        return resource;
+    }
+
     private static bool Ignore(PropertyDescriptor prop)
     {
         return prop.Attributes.OfType<System.Text.Json.Serialization.JsonIgnoreAttribute>().Any();

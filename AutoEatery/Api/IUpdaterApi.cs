@@ -1,7 +1,7 @@
-using AutoEatery.Models;
+using AutoEatery.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AutoEatery.Controllers;
+namespace AutoEatery.Api;
 
 public interface IUpdaterApi
 {

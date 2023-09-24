@@ -1,4 +1,4 @@
-﻿namespace AutoEatery.Models;
+﻿namespace AutoEatery.Data.Models;
 
 public class Order : BaseEntity
 {
