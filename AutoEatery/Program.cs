@@ -1,4 +1,7 @@
 using AutoEatery.Data;
+using AutoEatery.GraphQL.Schemas;
+using GraphQL;
+using GraphQL.Types;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,20 +10,27 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<EateryDbContext>(opt =>
-{
-    opt.UseSqlite(builder.Configuration.GetConnectionString("Sqlite"));
-});
+builder.Services.AddScoped<ISchema, EaterySchema>();
+builder.Services.AddGraphQL(graphQlBuilder => graphQlBuilder.AddSystemTextJson());
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddDbContext<EateryDbContext>(opt =>
+    opt.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")));
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-app.UseSwagger();
-app.UseSwaggerUI();
+if (app.Environment.IsDevelopment())
+{
+    // Configure the HTTP request pipeline.
+    app.UseSwagger();
+    app.UseSwaggerUI();
+
+    app.UseGraphQLPlayground();
+}
+
+app.UseGraphQL<ISchema>();
 
 app.UseHttpsRedirection();
 

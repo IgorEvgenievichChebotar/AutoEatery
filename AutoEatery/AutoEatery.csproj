@@ -9,13 +9,21 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0"/>
+        <PackageReference Include="GraphQL" Version="7.6.1" />
+        <PackageReference Include="GraphQL.DataLoader" Version="7.6.1" />
+        <PackageReference Include="GraphQL.MemoryCache" Version="7.6.1" />
+        <PackageReference Include="GraphQL.MicrosoftDI" Version="7.6.1" />
+        <PackageReference Include="GraphQL.NewtonsoftJson" Version="7.6.1" />
+        <PackageReference Include="GraphQL.Server.All" Version="7.6.0" />
+        <PackageReference Include="GraphQL.Server.Ui.Altair" Version="7.6.0" />
+        <PackageReference Include="GraphQL.SystemTextJson" Version="7.6.1" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.11" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.11">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.11" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -24,6 +32,10 @@
       </Content>
 
 
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="GraphQL\Types\DishInputType.cs" />
     </ItemGroup>
 
 

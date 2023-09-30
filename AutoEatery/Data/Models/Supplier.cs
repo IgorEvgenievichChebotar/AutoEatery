@@ -2,6 +2,6 @@
 
 public class Supplier : BaseEntity
 {
-    public List<Ingredient> SuppliedIngredients { get; set; } = new();
+    public virtual ICollection<Ingredient>? SuppliedIngredients { get; set; }
     public string? OrganizationName { get; set; }
 }
