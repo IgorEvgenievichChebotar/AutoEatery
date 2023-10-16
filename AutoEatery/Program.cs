@@ -1,5 +1,6 @@
 using AutoEatery.Data;
 using AutoEatery.GraphQL.Schemas;
+using EasyNetQ;
 using GraphQL;
 using GraphQL.Types;
 using Microsoft.EntityFrameworkCore;
@@ -13,8 +14,13 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<ISchema, EaterySchema>();
 builder.Services.AddGraphQL(graphQlBuilder => graphQlBuilder.AddSystemTextJson());
 
+builder.Services.AddAutoMapper(typeof(Program));
+
 builder.Services.AddDbContext<EateryDbContext>(opt =>
     opt.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")));
+
+var bus = RabbitHutch.CreateBus(builder.Configuration.GetConnectionString("AutoRabbitMQ"));
+builder.Services.AddSingleton(bus);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

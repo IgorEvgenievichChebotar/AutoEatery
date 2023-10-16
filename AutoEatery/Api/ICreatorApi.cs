@@ -5,8 +5,8 @@ namespace AutoEatery.Api;
 
 public interface ICreatorApi
 {
-    IActionResult AddSupplier([FromBody] Supplier supplier);
-    IActionResult AddOrder([FromBody] Order order);
-    IActionResult AddDishes([FromBody] Dish dish);
-    IActionResult AddIngredients([FromBody] Ingredient ingredient);
+    Task<IActionResult> AddSupplier([FromBody] Supplier supplier);
+    Task<IActionResult> AddOrder([FromBody] Order order);
+    Task<IActionResult> AddDishes([FromBody] Dish dish);
+    Task<IActionResult> AddIngredients([FromBody] Ingredient ingredient);
 }

@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEatery", "AutoEatery\AutoEatery.csproj", "{451E2411-E2BD-4A52-9211-600723350B02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEatery.AuditLog", "AutoEatery.AuditLog\AutoEatery.AuditLog\AutoEatery.AuditLog.csproj", "{408DCD65-9DCE-44A4-A088-776A7E8EE32F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEatery.Messages", "AutoEatery.Messages\AutoEatery.Messages\AutoEatery.Messages.csproj", "{23692231-A2F4-47C6-B7B2-0875E45238CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{451E2411-E2BD-4A52-9211-600723350B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{451E2411-E2BD-4A52-9211-600723350B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{451E2411-E2BD-4A52-9211-600723350B02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{408DCD65-9DCE-44A4-A088-776A7E8EE32F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{408DCD65-9DCE-44A4-A088-776A7E8EE32F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{408DCD65-9DCE-44A4-A088-776A7E8EE32F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{408DCD65-9DCE-44A4-A088-776A7E8EE32F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23692231-A2F4-47C6-B7B2-0875E45238CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23692231-A2F4-47C6-B7B2-0875E45238CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23692231-A2F4-47C6-B7B2-0875E45238CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23692231-A2F4-47C6-B7B2-0875E45238CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

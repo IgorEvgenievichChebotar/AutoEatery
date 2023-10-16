@@ -1,5 +1,8 @@
 ﻿using AutoEatery.Data;
 using AutoEatery.Data.Models;
+using AutoEatery.Messages;
+using AutoMapper;
+using EasyNetQ;
 using Microsoft.AspNetCore.Mvc;
 using static AutoEatery.Api.ApiParams;
 
@@ -8,40 +11,45 @@ namespace AutoEatery.Api.Impl;
 [ApiController]
 public class CreatorController : ControllerBase, ICreatorApi
 {
+    private readonly IBus _bus;
     private readonly EateryDbContext _db;
+    private readonly IMapper _mapper;
 
-    public CreatorController(EateryDbContext db)
+    public CreatorController(EateryDbContext db, IBus bus, IMapper mapper)
     {
         _db = db;
+        _bus = bus;
+        _mapper = mapper;
     }
 
     [HttpPost(API_SUPPLIERS)]
-    public IActionResult AddSupplier([FromBody] Supplier supplier)
+    public async Task<IActionResult> AddSupplier([FromBody] Supplier supplier)
     {
-        return Add(supplier);
+        return await Add(supplier);
     }
 
     [HttpPost(API_ORDERS)]
-    public IActionResult AddOrder([FromBody] Order order)
+    public async Task<IActionResult> AddOrder([FromBody] Order order)
     {
-        return Add(order);
+        await _bus.PubSub.PublishAsync(_mapper.Map<NewOrderMessage>(order));
+        return await Add(order);
     }
 
     [HttpPost(API_DISHES)]
-    public IActionResult AddDishes([FromBody] Dish dish)
+    public async Task<IActionResult> AddDishes([FromBody] Dish dish)
     {
-        return Add(dish);
+        return await Add(dish);
     }
 
     [HttpPost(API_INGREDIENTS)]
-    public IActionResult AddIngredients([FromBody] Ingredient ingredient)
+    public async Task<IActionResult> AddIngredients([FromBody] Ingredient ingredient)
     {
-        return Add(ingredient);
+        return await Add(ingredient);
     }
 
-    private IActionResult Add<E>(E entity) where E : BaseEntity
+    private async Task<IActionResult> Add<E>(E entity) where E : BaseEntity
     {
-        _db.Set<E>().Add(entity);
+        await _db.Set<E>().AddAsync(entity);
         return Ok();
     }
 }
