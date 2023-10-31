@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "Auto.PricingEngine";
+
+package price;
+
+service Pricer {
+  rpc GetPrice (PriceRequest) returns (PriceReply);
+}
+
+message PriceRequest {
+  repeated DishRequest dishList = 1;
+}
+
+message DishRequest {
+  sint32 price = 1;
+}
+
+message PriceReply {
+  sint32 price = 1;
+}

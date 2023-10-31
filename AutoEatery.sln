@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEatery.AuditLog", "Auto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEatery.Messages", "AutoEatery.Messages\AutoEatery.Messages\AutoEatery.Messages.csproj", "{23692231-A2F4-47C6-B7B2-0875E45238CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEatery.PricingServer", "AutoEatery.PricingServer\AutoEatery.PricingServer.csproj", "{5C79E0DD-478A-41D0-96AD-D45F3A660862}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{23692231-A2F4-47C6-B7B2-0875E45238CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23692231-A2F4-47C6-B7B2-0875E45238CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23692231-A2F4-47C6-B7B2-0875E45238CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C79E0DD-478A-41D0-96AD-D45F3A660862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C79E0DD-478A-41D0-96AD-D45F3A660862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C79E0DD-478A-41D0-96AD-D45F3A660862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C79E0DD-478A-41D0-96AD-D45F3A660862}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
