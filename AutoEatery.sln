@@ -8,6 +8,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEatery.Messages", "Auto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEatery.PricingServer", "AutoEatery.PricingServer\AutoEatery.PricingServer.csproj", "{5C79E0DD-478A-41D0-96AD-D45F3A660862}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEatery.Notifier", "AutoEatery.Notifier\AutoEatery.Notifier.csproj", "{EC7736BD-627C-4D10-AF02-B0138EF597BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEatery.WebSocketHub", "AutoEatery.WebSocketHub\AutoEatery.WebSocketHub.csproj", "{F94DFB4F-D486-46BF-8C70-1C18F882F4E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEatery.SignalRClient", "AutoEatery.SignalRClient\AutoEatery.SignalRClient.csproj", "{F345DC6D-D60B-4AF6-9A33-79D050C8D52D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +36,17 @@ Global
 		{5C79E0DD-478A-41D0-96AD-D45F3A660862}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C79E0DD-478A-41D0-96AD-D45F3A660862}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C79E0DD-478A-41D0-96AD-D45F3A660862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC7736BD-627C-4D10-AF02-B0138EF597BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC7736BD-627C-4D10-AF02-B0138EF597BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC7736BD-627C-4D10-AF02-B0138EF597BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC7736BD-627C-4D10-AF02-B0138EF597BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F94DFB4F-D486-46BF-8C70-1C18F882F4E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F94DFB4F-D486-46BF-8C70-1C18F882F4E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F94DFB4F-D486-46BF-8C70-1C18F882F4E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F94DFB4F-D486-46BF-8C70-1C18F882F4E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F345DC6D-D60B-4AF6-9A33-79D050C8D52D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F345DC6D-D60B-4AF6-9A33-79D050C8D52D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F345DC6D-D60B-4AF6-9A33-79D050C8D52D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F345DC6D-D60B-4AF6-9A33-79D050C8D52D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
