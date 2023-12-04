@@ -1,0 +1,66 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    div#signalr-notifications {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 5;
+        width: 240px;
+        height: auto;
+    }
+
+    div#signalr-notifications div {
+        border: 1px solid #000;
+        background-color: #dee2e6;
+        border-radius: 8px;
+        width: 240px;
+        padding: 8px;
+        margin-bottom: 8px;
+        font-size: 80%;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div id="signalr-notifications"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.3/signalr.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+<script>
+        $(document).ready(connectToSignalR);
+        
+        function displayNotification(user, json) {
+            console.log(json);
+            const $target = $('div#signalr-notifications');
+            const $div = $(`< div > ${json}</div >`);
+            $target.prepend($div);
+            window.setTimeout(function () { $div.fadeOut(2000, function () { $div.remove(); }); }, 8000);
+        }
+
+        function connectToSignalR() {
+            console.log("Connecting to SignalR...");
+            window.notificationDivs = [];
+            const conn = new signalR.HubConnectionBuilder()
+            .withUrl("http://localhost:5018/hub")
+            .withAutomaticReconnect()
+            .build();
+            conn.on("DisplayNotification", displayNotification);
+            conn.start().then(function () {
+                console.log("SignalR has started.");
+            }).catch(function (err) {
+                console.log(err);
+            });
+        }
+</script>
